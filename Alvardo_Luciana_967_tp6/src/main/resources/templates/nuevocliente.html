@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>HEAVEN SOUND | ALTA CLIENTE</title>
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		
+	</head>
+	<body>
+	<header th:replace= "/layouts/header :: header"></header>
+		<div class="cont-alta">
+			<div class="row ">
+					<div class="col-sm-12 col-md-8">
+						<div class="formulario">
+							<h2>ALTA NUEVO CLIENTE</h2>					 
+								
+							<form th:action="@{/cliente/guardar}" th:object="${cliente}"method="POST">
+								<div class="form-group">
+								    <label for="tipoDocumento">Tipo De Documento</label>
+								    <input type="text" class="form-control form-control-sm" id="tipoDocumento" th:field="*{tipoDocumento}">
+								 </div>					
+								
+								 <div class="form-group">
+								    <label for="nroDocumento">N° De Documento</label>
+								    <input type="number" class="form-control form-control-sm" id="nroDocumento" th:field="*{nroDocumento}">
+								 </div>
+								 
+								 <div class="form-group">
+								    <label for="nombreApellido">Nombre y Apellido</label>
+								    <input type="text" class="form-control form-control-sm" id="nombreApellido" th:field="*{nombreApellido}">
+								 </div>
+								 
+								 <div class="form-group">
+								    <label for="email">Email address</label>
+								    <input type="text" class="form-control form-control-sm" id="email" th:field="*{email}">
+								    <small id="text" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+								 </div>
+								  
+								 <div class="form-group">
+								    <label for="password">Password</label>
+								    <input type="password" class="form-control form-control-sm" id="password" th:field="*{password}">
+								 </div>
+								 
+								 <div class="form-group">
+								    <label for="fechaNacimiento">Fecha de Nacinmiento</label>
+								    <input type="Date" class="form-control form-control-sm" id="fechaNacimiento" th:field="*{fechaNacimiento}">
+								 </div>
+								 
+								 <div class="form-group">
+								    <label for="edad">Edad</label>
+								    <input type="number" class="form-control form-control-sm" id="edad" th:field="*{edad}">
+								 </div>
+												 
+								 <div class="form-group">
+								    <label for="codigoAreaTelefono">Codigo de Area</label>
+								    <input type="number" class="form-control form-control-sm" id="codigoAreaTelefono" th:field="*{codigoAreaTelefono}">
+								 </div>
+								 
+								 <div class="form-group">
+								    <label for="nroTelefono">N° de Telefono</label>
+								    <input type="number" class="form-control form-control-sm" id="nroTelefono" th:field="*{nroTelefono}">
+								 </div>
+								
+								 <div class="form-group">
+								    <label for="fechaUltimaCompra">Ultima Compra</label>
+								    <input type="Date" class="form-control form-control-sm" id="fechaUltimaCompra" th:field="*{fechaUltimaCompra}">
+								 </div>
+								 
+								 <button type="submit" class="btn btn-primary btn-lg">Guardar</button>					 
+								  					
+							</form>
+						</div>
+					</div>
+				
+		
+					<div class="col col-md">
+						<aside th:replace="/layouts/aside :: aside"></aside>
+					</div>
+			 </div>
+		</div>
+	
+	
+		<footer th:replace= "/layouts/footer :: footer"></footer>
+			
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+	</body>
+</html>

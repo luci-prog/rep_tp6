@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+		<title>HEAVEN SOUND | INICIO</title>
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		
+	</head>
+	<body>
+		<header th:replace= "/layouts/header :: header"></header>
+		<div class="cont-inicio">
+			<div class="row">
+				<div class="noticia row col-sm-12 col-md-8">
+					<div class="infoCard card" style="width: 16rem; ">
+					  <div class="card-body">
+					    <h5 class="card-title">MÁS VENDIDO</h5>
+					    <h6 class="card-subtitle mb-2 text-muted">EQUIPO DE SONIDO</h6>
+					    <p class="card-text">Mezclador de Audio Behringer – X air xr18 | Mezclador con módulo wifi integrado..</p>
+					    <a href="/producto/informacion" class="card-link">Ver Precio</a>
+					    <a href="/producto/informacion" class="card-link">Más Info</a>
+					  </div>					  				  					  
+					</div>
+				
+					<div class="infoCard card" style="width: 16rem; margin-left:2rem">
+					  <div class="card-body">
+					    <h5 class="card-title">MÁS VALORADO</h5>
+					    <h6 class="card-subtitle mb-2 text-muted">INSTRUMENTO MUSICAL</h6>
+					    <p class="card-text">Guitarra Electrica Fender Coronado 1/2 Caja Rosewood Mics Hh.</p>
+					    <a href="/producto/informacion" class="card-link">Ver Precio</a>
+					    <a href="/producto/informacion" class="card-link">Más Info</a>
+					  </div>
+					</div>
+					
+					<div class="infoCard card" style="width: 16rem; margin-left:2rem">
+					  <div class="card-body">
+					    <h5 class="card-title">MÁS BARATO</h5>
+					    <h6 class="card-subtitle mb-2 text-muted">EQUIPO DE SONIDO</h6>
+					    <p class="card-text">Parlante Bluetooth Sony Mhc-v43 Equipo De Musica Dvd Hdmi.</p>
+					    <a href="/producto/informacion" class="card-link">Ver Precio</a>
+					    <a href="/producto/informacion" class="card-link">Más Info</a>
+					  </div>
+					</div>
+				</div>
+				
+				<div class="col col-md">
+				<aside th:replace="/layouts/aside :: aside"></aside>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+		<footer th:replace= "/layouts/footer :: footer"></footer>
+		
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+	</body>
+</html>

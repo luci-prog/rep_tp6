@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>HEAVEN SOUND|Clientes</title>
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		
+	</head>
+	
+	<body>
+	<header th:replace= "/layouts/header :: header"></header>
+	
+	  <div class="cont-listado">
+			
+			<div class="row">
+		 		<div class="col-sm-12 col-md-8">
+		 		   <div class="tablaCliente"> 
+			 			<div id="enc-tablaCliente">
+			 				Listado de Clientes
+			 			</div>
+						<table class="table-striped table-bordered">
+							<thead class="thead-dark">
+								<tr>
+									<th>Tipo de Documento</th>
+									<th>Nº de Documento</th>
+									<th>Nombre y Apellido</th>
+									<th>E-mail</th>
+									<th>Fecha de Nacimiento</th>
+									<th>Fecha Ultima Compra</th>
+									<th>Edad</th>
+									<th>Telefono</th>
+											
+								</tr>
+							</thead>
+							<tbody class="bodyClient">
+								<tr th:each="client : ${clientes}">
+									<td th:text="${client.tipoDocumento}"></td>
+									<td th:text="${client.nroDocumento}"></td>
+									<td th:text="${client.nombreApellido}"></td>
+									<td th:text="${client.email}"></td>
+									<td th:text="${#temporals.format(client.fechaNacimiento,'dd/MM/yyyy')}"></td>
+									<td th:text="${#temporals.format(client.fechaUltimaCompra,'dd/MM/yyyy')}"></td>
+									<td th:text="${client.edad}"></td>
+									<td th:text="${client.codigoAreaTelefono} +'-'+ ${client.nroTelefono}"></td>
+														
+									
+								</tr>
+							</tbody>
+						 </table>
+				   </div>	 
+				 </div>
+				 
+					
+					<div class="col col-md">
+						<aside th:replace="/layouts/aside :: aside"></aside>
+					</div>
+			</div>	
+		
+	  </div>
+		
+		
+		<footer th:replace= "/layouts/footer :: footer"></footer>
+				
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script> 
+	</body> 
+</html>

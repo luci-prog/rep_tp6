@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>Confirmacion de Estado</title>
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+		
+	</head>
+	<body>
+		<div class="container">
+	
+		<div class="container col-sm-12">
+		
+		<div class="alert alert-success" role="alert">
+		  El Producto fue Guardado Con Exitoo!!. Dale un clic a <a href="/producto/ultimo" class="alert-link">DETALLES</a> si quieres.
+		  <a href="/producto" class="badge badge-primary" role="button" aria-pressed="true">AGREGAR OTRO</a>
+		  <a href="/inicio" class="badge badge-secondary" role="button" aria-pressed="true">VOLVER A INICIO</a>
+		  
+		  
+		</div>
+		<div align="center">
+		<img alt="" src="/images/tilde.png" width="400" height="350">
+		</div>
+		</div>
+		</div>
+					 
+	 	 <script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script> 
+	</body>
+</html>

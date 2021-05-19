@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+	<title>HEAVEN SOUND | COMPRA</title>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	
+	
+	</head>
+	<body>
+		<header th:replace= "/layouts/header :: header"></header>
+		
+		<div class="cont-alta">
+			<div class="row">
+					<div class="col-sm-12 col-md-8">
+					   <div class="formulario">
+						<h2>NUEVA COMPRA</h2>
+												
+							<form  th:action="@{/comprar/guardar}" th:object="${compra}" method="post">
+								<div class="form-group">
+							        <label for="codigo">Codigo del Producto</label>
+								    <input type="number" class="form-control" id="codigo" th:field="*{producto.codigo}">
+								</div>
+									    
+							    <div class="form-group">
+								    <label for="nombre">Nombre del Producto</label>
+								    <input type="text" class="form-control" id="nombre" th:field="*{producto.nombre}" placeholder="Ingrese Nombre">
+								 </div>
+										 
+														 
+									   
+							     <div class="form-group">
+								    <label for="marca">Marca del Producto</label>
+								    <input type="text" class="form-control" id="marca" th:field="*{producto.marca}" placeholder="Ingrese aquí la marca">
+								 </div>
+								 
+								
+								 <div class="form-group">
+								    <label for="precio">Precio del Producto ($)</label>
+								    <input type="number" class="form-control" id="precio" th:field="*{producto.precio}" step="0.01" oninput="calcular()">
+								 </div>
+								
+										 
+								 <div class="form-group">
+								    <label for="cantidad">CANTIDAD</label>
+								    <input type="number" class="form-control" id="cantidad" th:field="*{cantidad}" placeholder="Ingrese aquí la cantidad" oninput="calcular()">
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label for="total">TOTAL A PAGAR $</label>
+								 	<input class="form-control" type="number" id="total" th:field="*{total}"  readonly>
+								 </div>
+								 	 
+		     					     <button type="submit" class="btn btn-secondary btn-lg">FINALIZAR COMPRA</button>
+							</form>
+						</div>
+					</div>
+				
+		
+					<div class="col col-md">
+						<aside th:replace="/layouts/aside :: aside"></aside>
+					</div>
+			 </div>
+		</div>
+	
+	
+		<footer th:replace= "/layouts/footer :: footer"></footer>
+			
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+	
+		
+	
+	</body>
+	
+	<script type="text/javascript">
+		function calcular(){
+			try{
+				var a = parseFloat(document.getElementById("precio").value)||0,
+				    b = parseFloat(document.getElementById("cantidad").value)||0;
+				document.getElementById("total").value = a * b;
+			} catch (e) {}
+		}
+	</script>
+	
+</html>

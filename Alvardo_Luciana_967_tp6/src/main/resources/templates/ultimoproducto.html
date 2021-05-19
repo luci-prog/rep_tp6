@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>DETALLES</title>
+		<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		
+		
+	</head>
+	<body>
+		<header th:replace= "/layouts/header :: header"></header>
+		<div class="cont-listado">
+			
+			<div class="row">
+				<div class="col-sm-12 col-md-8">
+				   <div class="tablaProd">
+			  
+			 			<table class="tprod table-bordered">
+			 				<thead class="encTablaP">
+			 					<tr>
+			 						<th colspan="2">ULTIMO PRODUCTO</th>
+			 						
+			 					</tr>
+			 				</thead>
+			 				<tbody class= "bodyPro">
+			 					<tr class="">
+			 						<td>CODIGO:</td>
+			 						<td th:text="${ultimo.codigo}"></td>
+			 					</tr>
+			 					<tr>
+			 						<td>NOMBRE:</td>
+			 						<td th:text="${ultimo.nombre}"></td>
+			 					</tr>
+			 					<tr>
+			 						<td>PRECIO:</td>
+			 						<td th:text="${ultimo.precio}"></td>
+			 					</tr>
+			 					<tr>
+			 						<td>MARCA:</td>
+			 						<td th:text="${ultimo.marca}"></td>
+			 					</tr>
+			 					<tr>
+			 						<td>STOCK:</td>
+			 						<td th:text="${ultimo.stock}"></td>
+			 					</tr>
+			 				</tbody>
+			 			</table>
+		 		    </div>
+		 				
+		 		 </div>	
+		 						 	
+				 <div class="col col-md">
+					<aside th:replace="/layouts/aside :: aside"></aside>
+				 </div>
+			 </div>		
+	  		 	<div class="botonP">
+					<a href="/producto" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Agregar Otro</a>
+				</div>
+		</div>
+			 			 
+		 
+		 
+			 <footer th:replace= "/layouts/footer :: footer"></footer>
+		  
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1-lts/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+	</body>
+	
+</html>
